@@ -1,1 +1,24 @@
-<h1>I'm the index Page!</h1>
+<html>
+    <head>
+        <title>Restaurant(To be named later)</title>
+    </head>
+    <body>
+        <div>Title Heading
+            <div>Location</div>
+            <div>Hours</div>
+            <div>Phone#</div>
+        </div>
+        <div>Breakfast</div>
+        <%createdMenu.forEach(function(item) {%>
+            <div id="foodImage"><img src="<%=item.image%>"></div>
+            <div id="foodName"><%=item.name%></div>
+            <div id="foodDesc">(<%=item.desc%>)</div>
+            <div id="foodPrice">$<%=item.price%>.00</div>
+        <% }) %>
+        <div>Lunch</div>
+        <div>Dinner</div>
+        <div>Snacks</div>
+        <div>Sides</div>
+        <div>Beverages</div>
+    </body>
+</html>

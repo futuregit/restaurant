@@ -1,0 +1,11 @@
+<html>
+    <body>
+      <form action="addfood" method="post">
+          <% image.forEach(function(img) {%>
+              <div><img src="<%=img.urls.thumb%>"></div>
+              <input type="radio" name="image" value="<%=img.urls.regular%>">
+         <% }) %>
+          <input type="submit">
+      </form>  
+    </body>
+</html>
