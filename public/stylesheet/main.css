@@ -1,0 +1,49 @@
+.carousel-inner .item .img-responsive{
+ 
+    height: 37em ;
+    width: 28em ;
+   filter: brightness(80%);
+   
+   
+   
+}
+.caption-style{
+    font-size: 1.4em  !important;
+     font-weight: bold  !important;
+     text-transform: uppercase !important;
+}
+/*.row-md {*/
+/*    margin-right: 3.5em !important;*/
+/*    margin-left: 3.5em !important;*/
+/*}*/
+.box .col-lg-12 .menu {
+    word-wrap: break-word;
+}
+ul li span {
+    font-family: 'Avenir Next', sans-serif;
+     font-weight: bold;
+     text-transform: uppercase;
+}
+ul.leaders {
+    max-width: 40em;
+    padding: 0;
+    overflow-x: hidden;
+    list-style: none}
+ul.leaders li:after {
+    float: left;
+    width: 0;
+    white-space: nowrap;
+    content:
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "
+ ". . . . . . . . . . . . . . . . . . . . "}
+ul.leaders span:first-child {
+    padding-right: 0.33em;
+    background: rgba(255,255,255,0.9)}
+ul.leaders span + span {
+    float: right;
+    padding-left: 0.33em;
+    background: rgba(255,255,255,0.9);
+    position: relative;
+    z-index: 1}

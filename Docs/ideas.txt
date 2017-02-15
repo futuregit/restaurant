@@ -1,0 +1,1 @@
+Create a nav bar at under the heading containing breakfast, lunch, dinner, etc.. When the time changes make one of the heading the default.

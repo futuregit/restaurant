@@ -14,6 +14,7 @@ db.once('open', function() {
 });
 //mongoose Schema
 var foodSchema = mongoose.Schema({
+    category: String,
     name: String,
     price: Number,
     desc: String,
@@ -21,13 +22,22 @@ var foodSchema = mongoose.Schema({
 });
 var Food = mongoose.model('food', foodSchema);
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(express.static(__dirname + "/public"));
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
     Food.find({}, function(err, allItems){
         if(err) console.log(err);
-       // console.log(allItems)
+        //console.log(allItems.length)
         res.render('index', {createdMenu:allItems});
+    });
+    
+});
+app.get('/menu', function(req, res) {
+    Food.find({}, function(err, allItems){
+        if(err) console.log(err);
+        //console.log(allItems.length)
+        res.render('menu', {createdMenu:allItems});
     });
     
 });
@@ -35,16 +45,23 @@ app.get('/foodlist', function(req,res){
     var tempImage = "image"
     res.render('addfood', {image: tempImage});
 });
+app.get('/about', function(req,res){
+    res.render('about');
+})
+app.get('/map', function(req,res){
+    res.render('map');
+})
 app.post('/addfood', function(req,res){
     //check to see if it not an image search
     console.log("inside post addfood")
-    console.log(req.body.food)
+    console.log(req.body.cat)
     if(req.body.food != undefined) {
-    var name = req.body.food,
+    var category = req.body.cat,
+        name = req.body.food,
         price = req.body.price,
         desc = req.body.desc,
         image = req.body.image,
-        menuList = {name:name, price:price, desc:desc, image:image};
+        menuList = {category:category, name:name, price:price, desc:desc, image:image};
         Food.create(menuList, function(err, createdMenu){
             if(err) console.log(err);
             console.log(createdMenu)
