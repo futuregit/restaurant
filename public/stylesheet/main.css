@@ -47,3 +47,8 @@ ul.leaders span + span {
     background: rgba(255,255,255,0.9);
     position: relative;
     z-index: 1}
+    
+#map {
+
+    height: 400px;
+}
