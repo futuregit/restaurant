@@ -3,24 +3,24 @@ var express     =    require('express'),
     bodyParser  =    require('body-parser'),
     unsplash    =    require('unsplash-api'),
     app         =    express();
-// //Connecting to database 
-// mongoose.connect('mongodb://localhost/restaurant');
-// //Testing mongoose connection
-// var db = mongoose.connection;
-// db.on('error', console.error.bind(console, 'connection error:'));
-// db.once('open', function() {
-//   // we're connected!
-//   console.log("We're connected!");
-// });
-// //mongoose Schema
-// var foodSchema = mongoose.Schema({
-//     category: String,
-//     name: String,
-//     price: Number,
-//     desc: String,
-//     image: String
-// });
-// var Food = mongoose.model('food', foodSchema);
+//Connecting to database 
+mongoose.connect('mongodb://localhost/restaurant');
+//Testing mongoose connection
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  // we're connected!
+  console.log("We're connected!");
+});
+//mongoose Schema
+var foodSchema = mongoose.Schema({
+    category: String,
+    name: String,
+    price: Number,
+    desc: String,
+    image: String
+});
+var Food = mongoose.model('food', foodSchema);
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static(__dirname + "/public"));
 app.set('view engine', 'ejs');
