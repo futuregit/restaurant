@@ -5,7 +5,9 @@ var express     =    require('express'),
     app         =    express();
 //Connecting to database 
 var url = process.env.DATABASEURL || "mongodb://localhost/restaurant";
+console.log(url);
 //Testing mongoose connection
+mongoose.connect(url)
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
