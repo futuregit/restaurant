@@ -4,7 +4,7 @@ var express     =    require('express'),
     unsplash    =    require('unsplash-api'),
     app         =    express();
 //Connecting to database 
-mongoose.connect('mongodb://localhost/restaurant');
+var url = process.env.DATABASEURL || "mongodb://localhost/restaurant";
 //Testing mongoose connection
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
